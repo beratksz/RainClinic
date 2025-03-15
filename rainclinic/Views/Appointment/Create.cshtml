@@ -1,0 +1,164 @@
+﻿@model rainclinic.Models.AppointmentCreateViewModel
+
+@{
+    ViewData["Title"] = "Randevu Oluştur";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Randevu Oluştur</title>
+    <link rel="stylesheet" href="~/css/iletisimformu.css">
+    <link rel="stylesheet" href="~/css/randevuonayi.css">
+</head>
+
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Randevu Al</h3>
+                        <p>Aşağıdaki bilgileri eksiksiz doldurunuz.</p>
+                        @if (TempData["SuccessMessage"] != null)
+                        {
+                            <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+                        }
+                        @if (TempData["ErrorMessage"] != null)
+                        {
+                            <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+                        }
+                        <form asp-action="Create" method="post" onsubmit="validateForm(event)">
+                            @Html.AntiForgeryToken()
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="col-md-12">
+                                <label asp-for="Name" class="control-label">İsim Soyisim</label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label asp-for="Email" class="control-label">Email Adresiniz</label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label asp-for="Phone" class="control-label">Telefon</label>
+                                <input asp-for="Phone" class="form-control" />
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label asp-for="Doctor" class="control-label">Doktor Seçimi</label>
+                                <select asp-for="Doctor" class="form-select mt-3" required>
+                                    <option selected disabled value="">Doktor Seçiniz</option>
+                                    <option value="sila">Uzman Psikolog Şila</option>
+                                    <option value="zena">Uzman Psikolog Zena</option>
+                                    <option value="hayri">Uzman Psikiyatrist Hayri</option>
+                                </select>
+                                <span asp-validation-for="Doctor" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-12 mt-3">
+                                <label class="mb-3 mr-1">Muayene Durumu: </label>
+                                <div>
+                                    <input type="radio" asp-for="MuayeneTipi" value="Yüz yüze" id="yuzYuze" />
+                                    <label for="yuzYuze">Yüz yüze</label>
+                                </div>
+                                <div>
+                                    <input type="radio" asp-for="MuayeneTipi" value="Online" id="online" />
+                                    <label for="online">Online</label>
+                                </div>
+                                <span asp-validation-for="MuayeneTipi" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label asp-for="Password" class="control-label">Şifre</label>
+                                <input asp-for="Password" class="form-control" type="password" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-success">Randevu Onayla</button>
+                                <label class="form-check-label"> Tüm verilerin doğru olduğunu onaylıyorum</label>
+                            </div>
+
+                        </form>
+                        <div id="successMessage" style="display:none; color: green; margin-top: 10px;">
+                            <p>Randevu başarılı!</p>
+                            <p>Giriş Sayfasına Yönlendiriliyorsunuz...</p>
+                        </div>
+                        <div id="errorMessage" style="display:none; color: red; margin-top: 10px;">
+                            Randevu başarısız! Lütfen bilgilerinizi kontrol edin.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function validateForm(event) {
+        var isValid = true;
+        var errorMessage = "";
+
+        // Name validation
+        var name = document.querySelector('input[name="Name"]').value;
+        if (name.trim() === "") {
+            isValid = false;
+            errorMessage += "İsim alanı boş bırakılamaz.\n";
+        }
+
+        // Email validation
+        var email = document.querySelector('input[name="Email"]').value;
+        var emailPattern = /^[^\s]+[^\s]+\.[^\s]+$/;
+        if (!emailPattern.test(email)) {
+            isValid = false;
+            errorMessage += "Geçerli bir e-posta adresi giriniz.\n";
+        }
+
+        // Phone validation
+        var phone = document.querySelector('input[name="Phone"]').value;
+        var phonePattern = /^[0-9]{10}$/;
+        if (!phonePattern.test(phone)) {
+            isValid = false;
+            errorMessage += "Geçerli bir telefon numarası giriniz. (Başında *0* olmadan)\n";
+        }
+
+        // Doctor validation
+        var doctor = document.querySelector('select[name="Doctor"]').value;
+        if (doctor === "") {
+            isValid = false;
+            errorMessage += "Bir doktor seçiniz.\n";
+        }
+
+        // Muayene Tipi validation
+        var muayeneTipi = document.querySelector('input[name="MuayeneTipi"]:checked');
+        if (!muayeneTipi) {
+            isValid = false;
+            errorMessage += "Muayene tipi seçiniz.\n";
+        }
+
+        // Password validation
+        var password = document.querySelector('input[name="Password"]').value;
+        if (password.trim() === "") {
+            isValid = false;
+            errorMessage += "Şifre alanı boş bırakılamaz. En az 6 karakter Bir büyük ve kücük harf, en az bir özel karakter\n";
+        }
+
+        if (!isValid) {
+            event.preventDefault();
+            document.getElementById('errorMessage').style.display = 'block';
+            document.getElementById('errorMessage').innerText = errorMessage;
+        } else {
+            document.getElementById('successMessage').style.display = 'block';
+            setTimeout(function() {
+                window.location.href = '/Account/Login'; // Yönlendirme yapılacak URL
+            }, 5000);
+        }
+    }
+</script>

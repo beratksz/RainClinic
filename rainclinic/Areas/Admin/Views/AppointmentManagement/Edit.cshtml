@@ -1,0 +1,55 @@
+﻿@model rainclinic.Models.Appointment
+@{
+    ViewData["Title"] = "Randevu Düzenle";
+}
+
+<div class="container mt-4">
+    <h1>Randevu Düzenle</h1>
+    <form asp-action="Edit" method="post">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="UserId" />
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" readonly />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Phone" class="form-label"></label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Doctor" class="form-label"></label>
+            <input asp-for="Doctor" class="form-control" />
+            <span asp-validation-for="Doctor" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Muayene Tipi</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="MuayeneTipi" value="Yüz yüze" @(Model.MuayeneTipi == "Yüz yüze" ? "checked" : "") />
+                <label class="form-check-label">Yüz yüze</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="MuayeneTipi" value="Online" @(Model.MuayeneTipi == "Online" ? "checked" : "") />
+                <label class="form-check-label">Online</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AppointmentStatus" class="form-label"></label>
+            <select asp-for="AppointmentStatus" class="form-select">
+                <option value="Bekliyor" selected="@(Model.AppointmentStatus == "Bekliyor")">Bekliyor</option>
+                <option value="İşleme Alındı" selected="@(Model.AppointmentStatus == "İşleme Alındı")">İşleme Alındı</option>
+                <!-- İhtiyaca göre diğer durumlar -->
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+        <a href="@Url.Action("Index", "AppointmentManagement", new { area = "Admin" })" class="btn btn-secondary">İptal</a>
+    </form>
+</div>

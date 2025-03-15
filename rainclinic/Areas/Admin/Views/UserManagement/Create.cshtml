@@ -1,0 +1,35 @@
+﻿@model rainclinic.Models.EditUserViewModel
+@{
+    ViewData["Title"] = "Yeni Kullanıcı Ekle";
+}
+
+<div class="container-fluid mt-4">
+    <h1>Yeni Kullanıcı Ekle</h1>
+    <form asp-controller="UserManagement" asp-action="Create" asp-route-area="Admin" method="post">
+
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input name="Email" id="Email" type="email" asp-for="Email" class="form-control" placeholder="Email adresinizi girin" />
+
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Şifre</label>
+            <input type="password" class="form-control" name="Password" id="password" placeholder="Güçlü bir şifre belirleyin" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Roller</label>
+            @foreach (var role in Model.Roles)
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="SelectedRoles" value="@role" />
+                    <label class="form-check-label">@role</label>
+                </div>
+            }
+        </div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+        <a href="@Url.Action("Index", "UserManagement", new { area = "Admin" })" class="btn btn-secondary">İptal</a>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+﻿body {
+    background: white;
+}
+.navbar-nav .nav-item .nav-link {
+    padding: 10px 20px;
+    background-color: #1a5627;
+    margin: 5px;
+    border-radius: 5px;
+    color: white !important;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+    .navbar-nav .nav-item .nav-link:hover {
+        background-color: #1a5627;
+        opacity: 0.5;
+        color: white !important;
+    }
+
+/* Dropdown menü arka plan rengi */
+.dropdown-menu {
+    background-color: #1a5627;
+}
+    .dropdown-menu a {
+        color: white; /* İstediğiniz metin rengini buraya ekleyin */
+    }
+    /* Dropdown menü öğesi hover rengi */
+    .dropdown-menu .dropdown-item:hover {
+        color: white; /* İstediğiniz metin rengini buraya ekleyin */
+        background-color: black;
+    }

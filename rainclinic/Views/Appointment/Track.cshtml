@@ -1,0 +1,32 @@
+﻿@model rainclinic.Models.AppointmentTrackViewModel
+@{
+    ViewData["Title"] = "Randevu Takip";
+    Layout = "_Layout"; // Public layout
+}
+
+<div class="container mt-4">
+    <h1>Randevu Takip</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Randevu Detayları</h5>
+            <p><strong>Ad Soyad:</strong> @Model.Name</p>
+            <p><strong>Email:</strong> @Model.Email</p>
+            <p><strong>Telefon:</strong> @Model.Phone</p>
+            <p><strong>Doktor:</strong> @Model.Doctor</p>
+            <p><strong>Muayene Tipi:</strong> @Model.MuayeneTipi</p>
+            <p><strong>Randevu Durumu:</strong> @Model.AppointmentStatus</p>
+            <p><strong>Oluşturulma Tarihi:</strong> @Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</p>
+            <p><strong>Email Doğrulama:</strong> @(Model.EmailConfirmed ? "Onaylandı" : "Onaylanmadı")</p>
+        </div>
+    </div>
+</div>

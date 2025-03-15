@@ -1,0 +1,20 @@
+﻿@model rainclinic.Models.Appointment
+@{
+    ViewData["Title"] = "Randevu Detayları";
+}
+
+<div class="container mt-4">
+    <h1>Randevu Detayları</h1>
+    <div class="card">
+        <div class="card-body">
+            <p><strong>Ad Soyad:</strong> @Model.Name</p>
+            <p><strong>Email:</strong> @Model.Email</p>
+            <p><strong>Telefon:</strong> @Model.Phone</p>
+            <p><strong>Doktor:</strong> @Model.Doctor</p>
+            <p><strong>Muayene Tipi:</strong> @Model.MuayeneTipi</p>
+            <p><strong>Randevu Durumu:</strong> @Model.AppointmentStatus</p>
+            <p><strong>Oluşturulma Tarihi:</strong> @Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</p>
+            <a href="@Url.Action("Index", "AppointmentManagement", new { area = "Admin" })" class="btn btn-secondary">Geri Dön</a>
+        </div>
+    </div>
+</div>

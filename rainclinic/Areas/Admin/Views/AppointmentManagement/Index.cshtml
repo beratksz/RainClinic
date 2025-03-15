@@ -1,0 +1,57 @@
+﻿@model IEnumerable<rainclinic.Models.Appointment>
+@{
+    ViewData["Title"] = "Randevu Yönetimi";
+}
+
+<div class="container mt-4">
+    <h1>Randevu Yönetimi</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>İsim</th>
+                <th>Email</th>
+                <th>Telefon</th>
+                <th>Doktor</th>
+                <th>Muayene Tipi</th>
+                <th>Durum</th>
+                <th>Oluşturulma Tarihi</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appointment in Model)
+            {
+                <tr>
+                    <td>@appointment.Id</td>
+                    <td>@appointment.Name</td>
+                    <td>@appointment.Email</td>
+                    <td>@appointment.Phone</td>
+                    <td>@appointment.Doctor</td>
+                    <td>@appointment.MuayeneTipi</td>
+                    <td>@appointment.AppointmentStatus</td>
+                    <td>@appointment.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td>
+                        <a href="@Url.Action("Details", "AppointmentManagement", new { area = "Admin", id = appointment.Id })" class="btn btn-info btn-sm">Detay</a>
+                        <a href="@Url.Action("Edit", "AppointmentManagement", new { area = "Admin", id = appointment.Id })" class="btn btn-warning btn-sm">Düzenle</a>
+                        <form asp-controller="AppointmentManagement" asp-action="DeleteConfirmed" asp-route-area="Admin" method="post" class="d-inline" onsubmit="return confirm('Silmek istediğinize emin misiniz?');">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="id" value="@appointment.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

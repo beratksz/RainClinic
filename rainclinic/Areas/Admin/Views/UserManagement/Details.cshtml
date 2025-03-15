@@ -1,0 +1,18 @@
+﻿@model rainclinic.Models.UserViewModel
+@{
+    ViewData["Title"] = "Kullanıcı Detayları";
+}
+
+<div class="container-fluid mt-4">
+    <h1>Kullanıcı Detayları</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Email</h5>
+            <p><strong>ID:</strong> @Model.Id</p>
+            <p><strong>Roller:</strong> @string.Join(", ", Model.Roles)</p>
+            <p><strong>Oluşturulma Tarihi:</strong> @Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</p>
+            <a href="@Url.Action("Edit", "UserManagement", new { area = "Admin", id = Model.Id })" class="btn btn-warning">Düzenle</a>
+            <a href="@Url.Action("Index", "UserManagement", new { area = "Admin" })" class="btn btn-secondary">Geri Dön</a>
+        </div>
+    </div>
+</div>

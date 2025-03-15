@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  webapp:
+    image: rainclinic:latest
+    build:
+      context: .
+      dockerfile: rainclinic/Dockerfile
+    restart: always
+    networks:
+      - vps_network
+    ports:
+      - "8081:8081"
+    environment:
+      - VIRTUAL_HOST=rainclinic.blog
+      - LETSENCRYPT_HOST=rainclinic.blog
+      - LETSENCRYPT_EMAIL=admin@rainclinic.blog
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8081
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=rainclinicDB;User Id=sa;Password=Dockerdatabase123!;TrustServerCertificate=True;
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8081/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+networks:
+  vps_network:
+    external: true

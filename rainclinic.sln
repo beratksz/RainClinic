@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Çözüm Öğeleri", "Çözüm Öğeleri", "{558C27AA-30C7-4791-9A27-6BE0D6F6550D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rainclinic", "rainclinic\rainclinic.csproj", "{DC793696-C2A2-4C40-BF77-B4E07107A380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rainclinic.Tests", "rainclinic.Tests\rainclinic.Tests.csproj", "{1D9F8C50-0B8A-4E57-9377-51AC092175EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC793696-C2A2-4C40-BF77-B4E07107A380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC793696-C2A2-4C40-BF77-B4E07107A380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC793696-C2A2-4C40-BF77-B4E07107A380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC793696-C2A2-4C40-BF77-B4E07107A380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D9F8C50-0B8A-4E57-9377-51AC092175EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D9F8C50-0B8A-4E57-9377-51AC092175EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D9F8C50-0B8A-4E57-9377-51AC092175EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9F8C50-0B8A-4E57-9377-51AC092175EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
