@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System;
 using rainclinic.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace rainclinic.Areas.Admin.Controllers
 {
@@ -23,17 +24,30 @@ namespace rainclinic.Areas.Admin.Controllers
         }
 
         // GET: /Admin/AppointmentManagement
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            var appointments = _context.Appointments.ToList();
-            // Admin, ayrıca kullanıcının EmailConfirmed durumunu da görmek isteyebilir
-            foreach (var appointment in appointments)
-            {
-                var user = _userManager.FindByIdAsync(appointment.UserId).Result;
-                appointment.AppointmentStatus = appointment.AppointmentStatus; // Zaten saklanıyor; dilerseniz EmailConfirmed bilgisini ayrı ekleyin
-            }
-            return View(appointments);
+            var appointments = await _context.Appointments.ToListAsync();
+            var model = appointments.Select(a => {
+                // Kullanıcıyı çekiyoruz
+                var user = _userManager.FindByIdAsync(a.UserId).Result;
+                return new AppointmentViewModel
+                {
+                    Id = a.Id,
+                    Name = a.Name,
+                    Email = a.Email,
+                    Phone = a.Phone,
+                    Doctor = a.Doctor,
+                    MuayeneTipi = a.MuayeneTipi,
+                    AppointmentStatus = a.AppointmentStatus,
+                    CreatedAt = a.CreatedAt,
+                    EmailConfirmed = user?.EmailConfirmed ?? false
+                };
+            }).ToList();
+
+            return View(model);
         }
+
 
         // GET: /Admin/AppointmentManagement/Edit/5
         [HttpGet]

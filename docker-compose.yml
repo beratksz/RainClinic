@@ -10,13 +10,13 @@ services:
     networks:
       - vps_network
     ports:
-      - "8081:8081"
+      - "80:80"
     environment:
       - VIRTUAL_HOST=rainclinic.blog
       - LETSENCRYPT_HOST=rainclinic.blog
       - LETSENCRYPT_EMAIL=admin@rainclinic.blog
       - ASPNETCORE_ENVIRONMENT=Production
-      - ASPNETCORE_URLS=http://+:8081
+      - ASPNETCORE_URLS=http://+:80
       - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=rainclinicDB;User Id=sa;Password=Dockerdatabase123!;TrustServerCertificate=True;
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8081/ || exit 1"]

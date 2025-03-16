@@ -2,7 +2,9 @@
 @{
     ViewData["Title"] = "Randevu Düzenle";
 }
-
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
 <div class="container mt-4">
     <h1>Randevu Düzenle</h1>
     <form asp-action="Edit" method="post">
@@ -44,8 +46,10 @@
         <div class="mb-3">
             <label asp-for="AppointmentStatus" class="form-label"></label>
             <select asp-for="AppointmentStatus" class="form-select">
-                <option value="Bekliyor" selected="@(Model.AppointmentStatus == "Bekliyor")">Bekliyor</option>
-                <option value="İşleme Alındı" selected="@(Model.AppointmentStatus == "İşleme Alındı")">İşleme Alındı</option>
+                <option value="Bekliyor" class="@(Model.AppointmentStatus == "Bekliyor" ? "text-orange" : "")">Bekliyor</option>
+                <option value="Tarafımıza Ulaştı" class="@(Model.AppointmentStatus == "Tarafımıza Ulaştı" ? "text-blue" : "")">Tarafımıza Ulaştı</option>
+                <option value="E-posta Onayı Bekleniyor" class="@(Model.AppointmentStatus == "E-posta Onayı Bekleniyor" ? "text-yellow" : "")">E-posta Onayı Bekleniyor</option>
+                <option value="Kapandı" class="@(Model.AppointmentStatus == "Kapandı" ? "text-green" : "")">Kapandı</option>
                 <!-- İhtiyaca göre diğer durumlar -->
             </select>
         </div>

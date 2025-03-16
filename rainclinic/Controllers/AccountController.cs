@@ -38,20 +38,21 @@ namespace rainclinic.Controllers
                 if (result.Succeeded)
                 {
                     var user = await _userManager.FindByEmailAsync(model.Email);
-                    // Manuel olarak ClaimsPrincipal oluşturup cookie'yi yeniden oluşturuyoruz:
                     var principal = await _signInManager.CreateUserPrincipalAsync(user);
                     await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, principal);
 
                     if (await _userManager.IsInRoleAsync(user, "Admin"))
                     {
-                        return RedirectToAction("Index", "Home", new { area = "Admin" });
+                        return Json(new { success = true, redirectUrl = Url.Action("Index", "Home", new { area = "Admin" }) });
                     }
-                    return RedirectToLocal(returnUrl);
+                    return Json(new { success = true, redirectUrl = Url.Action("Index", "Home") });
                 }
                 ModelState.AddModelError(string.Empty, "Geçersiz giriş denemesi.");
             }
-            return View(model);
+            return Json(new { success = false });
         }
+
+
 
 
 

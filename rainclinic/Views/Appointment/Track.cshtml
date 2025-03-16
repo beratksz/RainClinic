@@ -1,9 +1,12 @@
-﻿@model rainclinic.Models.AppointmentTrackViewModel
+﻿@using Azure.Core
+@model IEnumerable<rainclinic.Models.Appointment>
 @{
     ViewData["Title"] = "Randevu Takip";
     Layout = "_Layout"; // Public layout
 }
-
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
 <div class="container mt-4">
     <h1>Randevu Takip</h1>
 
@@ -16,17 +19,41 @@
         <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
     }
 
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Randevu Detayları</h5>
-            <p><strong>Ad Soyad:</strong> @Model.Name</p>
-            <p><strong>Email:</strong> @Model.Email</p>
-            <p><strong>Telefon:</strong> @Model.Phone</p>
-            <p><strong>Doktor:</strong> @Model.Doctor</p>
-            <p><strong>Muayene Tipi:</strong> @Model.MuayeneTipi</p>
-            <p><strong>Randevu Durumu:</strong> @Model.AppointmentStatus</p>
-            <p><strong>Oluşturulma Tarihi:</strong> @Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</p>
-            <p><strong>Email Doğrulama:</strong> @(Model.EmailConfirmed ? "Onaylandı" : "Onaylanmadı")</p>
-        </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Doktor</th>
+                <th>Muayene Tipi</th>
+                <th>Durum</th>
+                <th>Oluşturulma Tarihi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appointment in Model)
+            {
+                <tr>
+                    <td>@appointment.Name</td>
+                    <td>@appointment.Doctor</td>
+                    <td>@appointment.MuayeneTipi</td>
+                    <td>@appointment.AppointmentStatus</td>
+                    <td>@appointment.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="mt-3">
+        @* Eğer kullanıcı mevcut açık randevusu yoksa, yeni randevu oluşturmak için buton göster *@
+        @if (!Model.Any(a => a.AppointmentStatus != "Kapandı"))
+        {
+            <a href="@Url.Action("Create", "Appointment")" class="btn btn-primary">Yeni Randevu Oluştur</a>
+        }
+        else
+        {
+            <div class="alert alert-info">
+                Mevcut açık randevunuz var. Yeni randevu oluşturmak için mevcut randevunuzun kapatılmasını bekleyin.
+            </div>
+        }
     </div>
 </div>

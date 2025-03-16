@@ -9,6 +9,9 @@
     <title>Login</title>
     <link rel="stylesheet" href="~/css/iletisimformu.css">
     <link rel="stylesheet" href="~/css/randevuonayi.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 </head>
 <body>
     <div class="form-body">
@@ -59,39 +62,37 @@
 </html>
 
 <script>
-    document.getElementById("loginForm").onsubmit = function(event) {
-        event.preventDefault(); // Formun normal şekilde gönderilmesini engelle
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var form = event.target;
 
-        var formData = new FormData(this);
-
-        fetch(this.action, {
-            method: this.method,
-            body: formData,
+        fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
             headers: {
-                'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                'RequestVerificationToken': form.querySelector('input[name="__RequestVerificationToken"]').value
             }
-        }).then(response => {
-            if (response.ok) {
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
                 showSuccessMessage();
             } else {
-                response.text().then(text => showErrorMessage(text));
+                showErrorMessage();
             }
-        }).catch(error => {
-            showErrorMessage("Bir hata oluştu: " + error.message);
+        })
+        .catch(error => {
+            showErrorMessage();
         });
-    };
-
-    function showSuccessMessage() {
-        var successMessage = document.getElementById("successMessage");
-        successMessage.style.display = "block";
+    });
+     function showSuccessMessage() {
+        document.getElementById('successMessage').style.display = 'block';
         setTimeout(function() {
-            window.location.href = "/Appointment/Track"; // Yönlendirme yapılacak sayfa
-        }, 3000); // Yönlendirme süresini 3 saniye olarak ayarladık
+            window.location.href = '@Url.Action("Index", "Home")';
+        }, 2000);
     }
 
-    function showErrorMessage(message) {
-        var errorMessage = document.getElementById("errorMessage");
-        errorMessage.innerText = message;
-        errorMessage.style.display = "block";
+    function showErrorMessage() {
+        document.getElementById('errorMessage').style.display = 'block';
     }
 </script>

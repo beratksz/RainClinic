@@ -3,24 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\berat\\Desktop\\rainclinic\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\migrations\\20250315180737_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\migrations\\20250315180737_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\areas\\admin\\views\\appointmentmanagement\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\areas\\admin\\views\\appointmentmanagement\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\areas\\admin\\views\\appointmentmanagement\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\areas\\admin\\views\\appointmentmanagement\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\rainclinic.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\rainclinic.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\models\\appointmentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\models\\appointmentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{558C27AA-30C7-4791-9A27-6BE0D6F6550D}|\u00C7\u00F6z\u00FCm \u00D6\u011Feleri{558C27AA-30C7-4791-9A27-6BE0D6F6550D}|C:\\Users\\berat\\Desktop\\rainclinic\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{558C27AA-30C7-4791-9A27-6BE0D6F6550D}|\u00C7\u00F6z\u00FCm \u00D6\u011Feleri{558C27AA-30C7-4791-9A27-6BE0D6F6550D}|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\areas\\admin\\controllers\\appointmentmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\areas\\admin\\controllers\\appointmentmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\areas\\admin\\views\\appointmentmanagement\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\areas\\admin\\views\\appointmentmanagement\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\views\\appointment\\track.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\views\\appointment\\track.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|c:\\users\\berat\\desktop\\rainclinic\\rainclinic\\services\\smtpemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC793696-C2A2-4C40-BF77-B4E07107A380}|rainclinic\\rainclinic.csproj|solutionrelative:rainclinic\\services\\smtpemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,65 +58,120 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20250315180737_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Migrations\\20250315180737_InitialCreate.cs",
-              "RelativeDocumentMoniker": "rainclinic\\Migrations\\20250315180737_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Migrations\\20250315180737_InitialCreate.cs",
-              "RelativeToolTip": "rainclinic\\Migrations\\20250315180737_InitialCreate.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABkAAAATAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AppointmentViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Models\\AppointmentViewModel.cs",
+              "RelativeDocumentMoniker": "rainclinic\\Models\\AppointmentViewModel.cs",
+              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Models\\AppointmentViewModel.cs",
+              "RelativeToolTip": "rainclinic\\Models\\AppointmentViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T22:17:07.601Z",
+              "WhenOpened": "2025-03-16T13:26:23.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Areas\\Admin\\Views\\AppointmentManagement\\Index.cshtml",
+              "RelativeDocumentMoniker": "rainclinic\\Areas\\Admin\\Views\\AppointmentManagement\\Index.cshtml",
+              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Areas\\Admin\\Views\\AppointmentManagement\\Index.cshtml",
+              "RelativeToolTip": "rainclinic\\Areas\\Admin\\Views\\AppointmentManagement\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-16T13:17:28.232Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Dockerfile",
-              "RelativeDocumentMoniker": "rainclinic\\Dockerfile",
-              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Dockerfile",
-              "RelativeToolTip": "rainclinic\\Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-15T22:03:51.04Z",
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Areas\\Admin\\Views\\AppointmentManagement\\Details.cshtml",
+              "RelativeDocumentMoniker": "rainclinic\\Areas\\Admin\\Views\\AppointmentManagement\\Details.cshtml",
+              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Areas\\Admin\\Views\\AppointmentManagement\\Details.cshtml",
+              "RelativeToolTip": "rainclinic\\Areas\\Admin\\Views\\AppointmentManagement\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-16T13:17:24.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Areas\\Admin\\Views\\AppointmentManagement\\Edit.cshtml",
+              "RelativeDocumentMoniker": "rainclinic\\Areas\\Admin\\Views\\AppointmentManagement\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Areas\\Admin\\Views\\AppointmentManagement\\Edit.cshtml",
+              "RelativeToolTip": "rainclinic\\Areas\\Admin\\Views\\AppointmentManagement\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-16T13:17:00.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppointmentManagementController.cs",
+              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Areas\\Admin\\Controllers\\AppointmentManagementController.cs",
+              "RelativeDocumentMoniker": "rainclinic\\Areas\\Admin\\Controllers\\AppointmentManagementController.cs",
+              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Areas\\Admin\\Controllers\\AppointmentManagementController.cs",
+              "RelativeToolTip": "rainclinic\\Areas\\Admin\\Controllers\\AppointmentManagementController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwCAAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T13:16:50.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Track.cshtml",
+              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Views\\Appointment\\Track.cshtml",
+              "RelativeDocumentMoniker": "rainclinic\\Views\\Appointment\\Track.cshtml",
+              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Views\\Appointment\\Track.cshtml",
+              "RelativeToolTip": "rainclinic\\Views\\Appointment\\Track.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-16T13:16:31.531Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Program.cs",
-              "RelativeDocumentMoniker": "rainclinic\\Program.cs",
-              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Program.cs",
-              "RelativeToolTip": "rainclinic\\Program.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Title": "AppointmentController.cs",
+              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Controllers\\AppointmentController.cs",
+              "RelativeDocumentMoniker": "rainclinic\\Controllers\\AppointmentController.cs",
+              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Controllers\\AppointmentController.cs",
+              "RelativeToolTip": "rainclinic\\Controllers\\AppointmentController.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAiwE4AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T22:01:04.373Z"
+              "WhenOpened": "2025-03-16T13:03:14.175Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "rainclinic.csproj",
-              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\rainclinic.csproj",
-              "RelativeDocumentMoniker": "rainclinic\\rainclinic.csproj",
-              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\rainclinic.csproj",
-              "RelativeToolTip": "rainclinic\\rainclinic.csproj",
+              "DocumentIndex": 8,
+              "Title": "SmtpEmailSender.cs",
+              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Services\\SmtpEmailSender.cs",
+              "RelativeDocumentMoniker": "rainclinic\\Services\\SmtpEmailSender.cs",
+              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Services\\SmtpEmailSender.cs",
+              "RelativeToolTip": "rainclinic\\Services\\SmtpEmailSender.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAUwCcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T13:02:35.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "rainclinic\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "rainclinic\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-15T22:00:26.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\Users\\berat\\Desktop\\rainclinic\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\Users\\berat\\Desktop\\rainclinic\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-03-15T22:00:13.494Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T13:02:19.463Z",
+              "EditorCaption": ""
             }
           ]
         }

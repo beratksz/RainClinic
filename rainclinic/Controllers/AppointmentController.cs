@@ -42,24 +42,58 @@ namespace rainclinic.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            // Kullanıcı oluşturma
-            var user = new IdentityUser
+            // Eğer kullanıcı oturum açmışsa
+            if (User.Identity.IsAuthenticated)
             {
-                UserName = model.Email,
-                Email = model.Email,
-                EmailConfirmed = false // Doğrulama gerekli
-            };
-
-            var result = await _userManager.CreateAsync(user, model.Password);
-            if (!result.Succeeded)
+                var currentUser = await _userManager.GetUserAsync(User);
+                // Kullanıcının kapalı olmayan (open) bir randevusu var mı kontrol et
+                var openAppointment = await _context.Appointments.AnyAsync(a => a.UserId == currentUser.Id && a.AppointmentStatus != "Kapandı");
+                if (openAppointment)
+                {
+                    TempData["ErrorMessage"] = "Mevcut randevunuz kapatılmadan yeni randevu oluşturamazsınız.";
+                    return RedirectToAction("Track");
+                }
+            }
+            else
             {
-                foreach (var error in result.Errors)
-                    ModelState.AddModelError("", error.Description);
-                return View(model);
+                // Kullanıcı giriş yapmamışsa, aynı email ile kayıtlı kullanıcı var mı kontrol et
+                var existingUser = await _userManager.FindByEmailAsync(model.Email);
+                if (existingUser != null)
+                {
+                    var openAppointment = await _context.Appointments.AnyAsync(a => a.UserId == existingUser.Id && a.AppointmentStatus != "Kapandı");
+                    if (openAppointment)
+                    {
+                        TempData["ErrorMessage"] = "Zaten açık randevunuz var. Lütfen mevcut randevunuz kapandıktan sonra yeni randevu oluşturun.";
+                        return RedirectToAction("Track");
+                    }
+                }
             }
 
-            // Otomatik olarak "User" rolü atama
-            await _userManager.AddToRoleAsync(user, "User");
+            // Kullanıcı oluşturma (eğer henüz kayıtlı değilse)
+            IdentityUser user;
+            if (!User.Identity.IsAuthenticated)
+            {
+                user = new IdentityUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    EmailConfirmed = false // Email doğrulama gerekli
+                };
+
+                var result = await _userManager.CreateAsync(user, model.Password);
+                if (!result.Succeeded)
+                {
+                    foreach (var error in result.Errors)
+                        ModelState.AddModelError("", error.Description);
+                    return View(model);
+                }
+                // Yeni kayıt olan kullanıcılara otomatik olarak "User" rolü atanır
+                await _userManager.AddToRoleAsync(user, "User");
+            }
+            else
+            {
+                user = await _userManager.GetUserAsync(User);
+            }
 
             // Randevu kaydı oluşturma
             var appointment = new Appointment
@@ -70,53 +104,75 @@ namespace rainclinic.Controllers
                 Phone = model.Phone,
                 Doctor = model.Doctor,
                 MuayeneTipi = model.MuayeneTipi,
-                AppointmentStatus = "Bekliyor",
+                AppointmentStatus = "Bekliyor", // Yeni randevu başlangıçta açık (bekleyen) statüsünde
                 CreatedAt = DateTime.UtcNow
             };
             _context.Appointments.Add(appointment);
             await _context.SaveChangesAsync();
 
-            // Email doğrulama işlemi için token oluştur ve callback URL oluştur
-            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-            var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = token }, protocol: Request.Scheme);
-
-            // IEmailSender servisini kullanarak e-posta gönderimi yap
-            await _emailSender.SendEmailAsync(model.Email, "E-posta Onayı",
-                $"Lütfen e-posta adresinizi onaylamak için <a href='{callbackUrl}'>buraya tıklayın</a>.");
+            // Email doğrulama işlemi için token oluşturma ve callback URL üretimi (Identity’nin kendi mekanizması)
+            if (!user.EmailConfirmed)
+            {
+                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = token }, protocol: Request.Scheme);
+                await _emailSender.SendEmailAsync(model.Email, "E-posta Onayı",
+                    $"Lütfen e-posta adresinizi onaylamak için <a href='{callbackUrl}'>buraya tıklayın</a>.");
+            }
 
             TempData["SuccessMessage"] = "Randevunuz oluşturuldu. Lütfen e-postanızı doğrulayın.";
             return RedirectToAction("Track");
         }
 
+        [HttpGet]
+        public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        {
+            if (userId == null || code == null)
+            {
+                // Geçersiz parametreler; anasayfaya yönlendirme yapabilirsiniz.
+                return RedirectToAction("Index", "Home");
+            }
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                // Kullanıcı bulunamazsa uygun bir hata mesajı döndürün.
+                return NotFound($"ID '{userId}' ile bir kullanıcı bulunamadı.");
+            }
+
+            var result = await _userManager.ConfirmEmailAsync(user, code);
+            if (result.Succeeded)
+            {
+                // Onay başarılıysa, kullanıcıya onaylandığına dair bir view veya mesaj gösterin.
+                return View("ConfirmEmail"); // Örneğin, "Email onaylandı" mesajı içeren view
+            }
+            else
+            {
+                // Onay başarısızsa hata view'i veya uygun mesaj gösterin.
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View("Error"); // Hata view'i
+            }
+        }
+
+
         // GET: /Appointment/Track
         [HttpGet]
         public async Task<IActionResult> Track()
         {
-            // Giriş yapmış kullanıcının randevu kaydını getirir
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
                 return RedirectToAction("Login", "Account");
 
-            // Kullanıcının randevusunu getirirken, kullanıcı ile Appointment arasında 1:1 ilişki varsayılıyor.
-            var appointment = await _context.Appointments.SingleOrDefaultAsync(a => a.UserId == user.Id);
-            if (appointment == null)
-            {
-                TempData["ErrorMessage"] = "Henüz randevu oluşturulmamış.";
-                return RedirectToAction("Create");
-            }
+            // Kullanıcının tüm randevularını getir
+            var appointments = await _context.Appointments
+                .Where(a => a.UserId == user.Id)
+                .OrderByDescending(a => a.CreatedAt)
+                .ToListAsync();
 
-            var model = new AppointmentTrackViewModel
-            {
-                Name = appointment.Name,
-                Email = appointment.Email,
-                Phone = appointment.Phone,
-                Doctor = appointment.Doctor,
-                MuayeneTipi = appointment.MuayeneTipi,
-                AppointmentStatus = appointment.AppointmentStatus,
-                CreatedAt = appointment.CreatedAt,
-                EmailConfirmed = user.EmailConfirmed
-            };
-            return View(model);
+            return View(appointments);
         }
+
     }
 }

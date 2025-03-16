@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\custom.css"
     },
     {
+      "Id": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\wwwroot\\css\\email.css",
+      "PackagePath": "staticwebassets\\css\\email.css"
+    },
+    {
       "Id": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\wwwroot\\css\\iletisimformu.css",
       "PackagePath": "staticwebassets\\css\\iletisimformu.css"
     },

@@ -1,10 +1,15 @@
-﻿@model IEnumerable<rainclinic.Models.Appointment>
+﻿@model IEnumerable<rainclinic.Models.AppointmentViewModel>
+
+
 @{
     ViewData["Title"] = "Randevu Yönetimi";
 }
-
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
 <div class="container mt-4">
     <h1>Randevu Yönetimi</h1>
+
 
     @if (TempData["SuccessMessage"] != null)
     {
@@ -21,6 +26,7 @@
                 <th>ID</th>
                 <th>İsim</th>
                 <th>Email</th>
+                <th>Email Onay Durumu</th>
                 <th>Telefon</th>
                 <th>Doktor</th>
                 <th>Muayene Tipi</th>
@@ -36,6 +42,7 @@
                     <td>@appointment.Id</td>
                     <td>@appointment.Name</td>
                     <td>@appointment.Email</td>
+                    <td>@(appointment.EmailConfirmed ? "Onaylandı" : "Onaylanmadı")</td>
                     <td>@appointment.Phone</td>
                     <td>@appointment.Doctor</td>
                     <td>@appointment.MuayeneTipi</td>

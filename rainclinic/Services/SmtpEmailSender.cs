@@ -40,5 +40,6 @@ namespace rainclinic.Services
                 await client.SendMailAsync(mailMessage);
             }
         }
+
     }
 }
