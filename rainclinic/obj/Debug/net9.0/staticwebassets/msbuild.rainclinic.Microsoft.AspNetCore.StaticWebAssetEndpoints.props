@@ -60,18 +60,6 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"d7mtamj0sv"},{"Name":"integrity","Value":"sha256-qafVaqzme1g7FK15eYaUZ0L2e/K3Kwu93D6MCdZddoA="},{"Name":"label","Value":"_content/rainclinic/css/custom.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"847"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022qafVaqzme1g7FK15eYaUZ0L2e/K3Kwu93D6MCdZddoA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Feb 2025 12:38:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/rainclinic/css/email.5vxd41uqqb.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\email.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5vxd41uqqb"},{"Name":"integrity","Value":"sha256-sXRXvvWzL/0BMZYWkED2jawyhc/c\u002BFJooDynFwif97M="},{"Name":"label","Value":"_content/rainclinic/css/email.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4690"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022sXRXvvWzL/0BMZYWkED2jawyhc/c\u002BFJooDynFwif97M=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Mar 2025 13:09:48 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/rainclinic/css/email.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\email.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-sXRXvvWzL/0BMZYWkED2jawyhc/c\u002BFJooDynFwif97M="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4690"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022sXRXvvWzL/0BMZYWkED2jawyhc/c\u002BFJooDynFwif97M=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Mar 2025 13:09:48 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/rainclinic/css/iletisimformu.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\iletisimformu.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

@@ -1092,7 +1092,6 @@ C:\Users\berat\Desktop\rainclinic\rainclinic\wwwroot\svg\regular\bx-vector.svg
 C:\Users\berat\Desktop\rainclinic\rainclinic\wwwroot\svg\solid\bxs-book-bookmark.svg
 C:\Users\berat\Desktop\rainclinic\rainclinic\wwwroot\svg\solid\bxs-mouse-alt.svg
 C:\Users\berat\Desktop\rainclinic\rainclinic\wwwroot\svg\regular\bx-low-vision.svg
-C:\Users\berat\Desktop\rainclinic\rainclinic\wwwroot\css\email.css
 C:\Users\berat\Desktop\rainclinic\rainclinic\wwwroot\svg\regular\bx-objects-vertical-top.svg
 C:\Users\berat\Desktop\rainclinic\rainclinic\wwwroot\svg\solid\bxs-buoy.svg
 C:\Users\berat\Desktop\rainclinic\rainclinic\wwwroot\svg\regular\bx-calendar-week.svg
@@ -1710,7 +1709,6 @@ wwwroot\css\animations.css
 wwwroot\css\boxicons.css
 wwwroot\css\boxicons.min.css
 wwwroot\css\custom.css
-wwwroot\css\email.css
 wwwroot\css\iletisimformu.css
 wwwroot\css\randevuonayi.css
 wwwroot\css\site.css

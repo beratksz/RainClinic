@@ -2742,4 +2742,3 @@ C:\Users\berat\Desktop\rainclinic\rainclinic\obj\Debug\net9.0\refint\rainclinic.
 C:\Users\berat\Desktop\rainclinic\rainclinic\obj\Debug\net9.0\rainclinic.pdb
 C:\Users\berat\Desktop\rainclinic\rainclinic\obj\Debug\net9.0\rainclinic.genruntimeconfig.cache
 C:\Users\berat\Desktop\rainclinic\rainclinic\obj\Debug\net9.0\ref\rainclinic.dll
-C:\Users\berat\Desktop\rainclinic\rainclinic\obj\Debug\net9.0\compressed\n53npli97n-5vxd41uqqb.gz

@@ -75,5 +75,37 @@ namespace rainclinic.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+
+
+        [HttpGet]
+        public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        {
+            if (userId == null || code == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound($"ID '{userId}' ile bir kullanıcı bulunamadı.");
+            }
+
+            var result = await _userManager.ConfirmEmailAsync(user, code);
+            if (result.Succeeded)
+            {
+                return View("ConfirmEmail");
+            }
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View("Error");
+            }
+        }
+
+
     }
 }

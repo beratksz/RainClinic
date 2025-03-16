@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("rainclinic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9aa5b483ba14617b2c9c6ecd89be00b3e31ba73")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+746e6037c3b435c40f4eebd53191a7d3d158943b")]
 [assembly: System.Reflection.AssemblyProductAttribute("rainclinic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("rainclinic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

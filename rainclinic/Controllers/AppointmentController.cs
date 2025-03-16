@@ -34,6 +34,9 @@ namespace rainclinic.Controllers
             return View();
         }
 
+        
+
+
         // POST: /Appointment/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
