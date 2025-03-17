@@ -16,7 +16,7 @@ namespace rainclinic.Models
     public sealed class RefreshRequest
     {
         public required string RefreshToken { get; init; }
-        public required string AccessToken { get; init; } // Add this line
+        public required string AccessToken { get; init; } 
     }
 }
 

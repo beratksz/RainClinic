@@ -2,7 +2,7 @@
 @model IEnumerable<rainclinic.Models.Appointment>
 @{
     ViewData["Title"] = "Randevu Takip";
-    Layout = "_Layout"; // Public layout
+    Layout = "_Layout"; 
 }
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -44,7 +44,6 @@
     </table>
 
     <div class="mt-3">
-        @* Eğer kullanıcı mevcut açık randevusu yoksa, yeni randevu oluşturmak için buton göster *@
         @if (!Model.Any(a => a.AppointmentStatus != "Kapandı"))
         {
             <a href="@Url.Action("Create", "Appointment")" class="btn btn-primary">Yeni Randevu Oluştur</a>

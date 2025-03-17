@@ -23,13 +23,11 @@ namespace rainclinic.Areas.Admin.Controllers
             _userManager = userManager;
         }
 
-        // GET: /Admin/AppointmentManagement
         [HttpGet]
         public async Task<IActionResult> Index()
         {
             var appointments = await _context.Appointments.ToListAsync();
             var model = appointments.Select(a => {
-                // Kullanıcıyı çekiyoruz
                 var user = _userManager.FindByIdAsync(a.UserId).Result;
                 return new AppointmentViewModel
                 {
@@ -49,7 +47,6 @@ namespace rainclinic.Areas.Admin.Controllers
         }
 
 
-        // GET: /Admin/AppointmentManagement/Edit/5
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -58,7 +55,6 @@ namespace rainclinic.Areas.Admin.Controllers
             return View(appointment);
         }
 
-        // POST: /Admin/AppointmentManagement/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Appointment model)
@@ -71,7 +67,6 @@ namespace rainclinic.Areas.Admin.Controllers
             var appointment = _context.Appointments.Find(model.Id);
             if (appointment == null) return NotFound();
 
-            // Admin, randevu detaylarını düzenleyebilir
             appointment.Name = model.Name;
             appointment.Phone = model.Phone;
             appointment.Doctor = model.Doctor;
@@ -84,7 +79,6 @@ namespace rainclinic.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: /Admin/AppointmentManagement/Details/5
         [HttpGet]
         public IActionResult Details(int id)
         {
@@ -93,7 +87,6 @@ namespace rainclinic.Areas.Admin.Controllers
             return View(appointment);
         }
 
-        // POST: /Admin/AppointmentManagement/DeleteConfirmed/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)

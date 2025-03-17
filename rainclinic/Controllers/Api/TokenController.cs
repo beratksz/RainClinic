@@ -10,7 +10,6 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-// using Microsoft.AspNetCore.Identity.Data; // Remove this line if not needed
 
 namespace rainclinic.Controllers.Api
 {
@@ -59,9 +58,8 @@ namespace rainclinic.Controllers.Api
                     signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                 );
 
-                var refreshToken = Guid.NewGuid().ToString(); // Benzersiz bir refresh token üretin ve veritabanında saklayın
+                var refreshToken = Guid.NewGuid().ToString();
 
-                // Refresh token'ı veritabanında saklama işlemi burada yapılmalı
 
                 return Ok(new
                 {
@@ -76,8 +74,7 @@ namespace rainclinic.Controllers.Api
         [HttpPost("refresh")]
         public async Task<IActionResult> Refresh([FromBody] rainclinic.Models.RefreshRequest request)
         {
-            // Refresh token'ı veritabanında doğrulama işlemi burada yapılmalı
-            var isValidRefreshToken = true; // Bu değeri veritabanı kontrolü ile belirleyin
+            var isValidRefreshToken = true;
 
             if (!isValidRefreshToken)
             {
@@ -94,7 +91,7 @@ namespace rainclinic.Controllers.Api
                 {
                     ValidateIssuer = true,
                     ValidateAudience = true,
-                    ValidateLifetime = true, // Token süresini kontrol ediyoruz
+                    ValidateLifetime = true, 
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = jwtConfig["ValidIssuer"],
                     ValidAudience = jwtConfig["ValidAudience"],

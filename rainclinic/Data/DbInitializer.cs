@@ -14,7 +14,6 @@ namespace rainclinic.Data
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
 
-                // Roller tanımlanıyor: Admin ve User (sonradan eklenebilir yapı)
                 string[] roles = new string[] { "Admin", "User" };
                 foreach (var role in roles)
                 {
@@ -24,9 +23,8 @@ namespace rainclinic.Data
                     }
                 }
 
-                // Admin kullanıcı seeding: Bu bilgiler deploy sonrası sistemin ilk admin kullanıcısını oluşturur
-                string adminEmail = "admin@example.com";
-                string adminPassword = "Admin123!";
+                string adminEmail = "admin@rainclinic.blog";
+                string adminPassword = "Rainclinic123!";
                 var adminUser = await userManager.FindByEmailAsync(adminEmail);
 
                 if (adminUser == null)

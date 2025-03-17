@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CZuZ+MEmPc0=",
+  "dgSpecHash": "CTUlu78ucSo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic.Tests\\rainclinic.Tests.csproj",
+  "projectFilePath": "C:\\Users\\berat\\Desktop\\RAINCLINIC\\rainclinic.Tests\\rainclinic.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\berat\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
     "C:\\Users\\berat\\.nuget\\packages\\microsoft.aspnetcore.mvc.testing\\9.0.3\\microsoft.aspnetcore.mvc.testing.9.0.3.nupkg.sha512",

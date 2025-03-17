@@ -14,7 +14,7 @@ namespace rainclinic.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ApplicationDbContext _context;
-        private readonly IEmailSender _emailSender; // E-posta göndermek için
+        private readonly IEmailSender _emailSender;
 
         public AppointmentController(UserManager<IdentityUser> userManager,
                                      RoleManager<IdentityRole> roleManager,
@@ -27,7 +27,6 @@ namespace rainclinic.Controllers
             _emailSender = emailSender;
         }
 
-        // GET: /Appointment/Create
         [HttpGet]
         public IActionResult Create()
         {
@@ -37,7 +36,6 @@ namespace rainclinic.Controllers
         
 
 
-        // POST: /Appointment/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(AppointmentCreateViewModel model)
@@ -45,11 +43,9 @@ namespace rainclinic.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            // Eğer kullanıcı oturum açmışsa
             if (User.Identity.IsAuthenticated)
             {
                 var currentUser = await _userManager.GetUserAsync(User);
-                // Kullanıcının kapalı olmayan (open) bir randevusu var mı kontrol et
                 var openAppointment = await _context.Appointments.AnyAsync(a => a.UserId == currentUser.Id && a.AppointmentStatus != "Kapandı");
                 if (openAppointment)
                 {
@@ -59,7 +55,6 @@ namespace rainclinic.Controllers
             }
             else
             {
-                // Kullanıcı giriş yapmamışsa, aynı email ile kayıtlı kullanıcı var mı kontrol et
                 var existingUser = await _userManager.FindByEmailAsync(model.Email);
                 if (existingUser != null)
                 {
@@ -72,7 +67,6 @@ namespace rainclinic.Controllers
                 }
             }
 
-            // Kullanıcı oluşturma (eğer henüz kayıtlı değilse)
             IdentityUser user;
             if (!User.Identity.IsAuthenticated)
             {
@@ -80,7 +74,7 @@ namespace rainclinic.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    EmailConfirmed = false // Email doğrulama gerekli
+                    EmailConfirmed = false 
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
@@ -90,7 +84,6 @@ namespace rainclinic.Controllers
                         ModelState.AddModelError("", error.Description);
                     return View(model);
                 }
-                // Yeni kayıt olan kullanıcılara otomatik olarak "User" rolü atanır
                 await _userManager.AddToRoleAsync(user, "User");
             }
             else
@@ -98,7 +91,6 @@ namespace rainclinic.Controllers
                 user = await _userManager.GetUserAsync(User);
             }
 
-            // Randevu kaydı oluşturma
             var appointment = new Appointment
             {
                 UserId = user.Id,
@@ -107,13 +99,12 @@ namespace rainclinic.Controllers
                 Phone = model.Phone,
                 Doctor = model.Doctor,
                 MuayeneTipi = model.MuayeneTipi,
-                AppointmentStatus = "Bekliyor", // Yeni randevu başlangıçta açık (bekleyen) statüsünde
+                AppointmentStatus = "Bekliyor",
                 CreatedAt = DateTime.UtcNow
             };
             _context.Appointments.Add(appointment);
             await _context.SaveChangesAsync();
 
-            // Email doğrulama işlemi için token oluşturma ve callback URL üretimi (Identity’nin kendi mekanizması)
             if (!user.EmailConfirmed)
             {
                 var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -131,36 +122,31 @@ namespace rainclinic.Controllers
         {
             if (userId == null || code == null)
             {
-                // Geçersiz parametreler; anasayfaya yönlendirme yapabilirsiniz.
                 return RedirectToAction("Index", "Home");
             }
 
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
-                // Kullanıcı bulunamazsa uygun bir hata mesajı döndürün.
                 return NotFound($"ID '{userId}' ile bir kullanıcı bulunamadı.");
             }
 
             var result = await _userManager.ConfirmEmailAsync(user, code);
             if (result.Succeeded)
             {
-                // Onay başarılıysa, kullanıcıya onaylandığına dair bir view veya mesaj gösterin.
-                return View("ConfirmEmail"); // Örneğin, "Email onaylandı" mesajı içeren view
+                return View("ConfirmEmail"); 
             }
             else
             {
-                // Onay başarısızsa hata view'i veya uygun mesaj gösterin.
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
                 }
-                return View("Error"); // Hata view'i
+                return View("Error"); 
             }
         }
 
 
-        // GET: /Appointment/Track
         [HttpGet]
         public async Task<IActionResult> Track()
         {
@@ -168,7 +154,6 @@ namespace rainclinic.Controllers
             if (user == null)
                 return RedirectToAction("Login", "Account");
 
-            // Kullanıcının tüm randevularını getir
             var appointments = await _context.Appointments
                 .Where(a => a.UserId == user.Id)
                 .OrderByDescending(a => a.CreatedAt)

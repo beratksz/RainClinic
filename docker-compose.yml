@@ -10,7 +10,7 @@ services:
     networks:
       - vps_network
     ports:
-      - "80:80"
+      - "80"
     environment:
       - VIRTUAL_HOST=rainclinic.blog
       - LETSENCRYPT_HOST=rainclinic.blog
@@ -19,7 +19,7 @@ services:
       - ASPNETCORE_URLS=http://+:80
       - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=rainclinicDB;User Id=sa;Password=Dockerdatabase123!;TrustServerCertificate=True;
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8081/ || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:80/ || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3

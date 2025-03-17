@@ -25,7 +25,7 @@ namespace rainclinic.Services
 
             using (var client = new SmtpClient(host, port))
             {
-                client.EnableSsl = true; // Hosting sağlayıcınızın SSL/TLS kullanımına göre ayarlayın.
+                client.EnableSsl = true; 
                 client.Credentials = new NetworkCredential(username, password);
 
                 var mailMessage = new MailMessage

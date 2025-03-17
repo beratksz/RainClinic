@@ -12,8 +12,6 @@ namespace rainclinic.Data
         {
         }
 
-        // DbSet properties go here
-        // public DbSet<YourEntity> YourEntities { get; set; }
 
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<Appointment> Appointments { get; set; }

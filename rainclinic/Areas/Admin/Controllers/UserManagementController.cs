@@ -29,9 +29,8 @@ namespace rainclinic.Areas.Admin.Controllers
             {
                 Id = u.Id,
                 Email = u.Email,
-                // Roller asenkron alıyoruz, örnek amaçlı .Result kullanıyoruz (production’da async/await tercih edin)
                 Roles = _userManager.GetRolesAsync(u).Result,
-                CreatedAt = DateTime.Now // Gerçek oluşturulma tarihi eklenebilir
+                CreatedAt = DateTime.Now 
             });
             return View(model);
         }
@@ -53,16 +52,13 @@ namespace rainclinic.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(EditUserViewModel model, string[] SelectedRoles, string Password)
         {
-            // ModelState'den "Id" alanı hatasını kaldırıyoruz
             ModelState.Remove(nameof(model.Id));
 
-            // Eğer SelectedRoles null ise, boş liste atıyoruz
             if (model.SelectedRoles == null)
             {
                 model.SelectedRoles = new List<string>();
             }
 
-            // Model binding hatalarını konsola yazdırıyoruz
             foreach (var key in ModelState.Keys)
             {
                 foreach (var error in ModelState[key].Errors)
@@ -109,7 +105,6 @@ namespace rainclinic.Areas.Admin.Controllers
                     return RedirectToAction("Index");
                 }
 
-                // Eğer hata varsa, hata mesajlarını ModelState'e ekliyoruz ve konsola da yazdırıyoruz
                 if (result != null)
                 {
                     foreach (var error in result.Errors)
@@ -132,13 +127,11 @@ namespace rainclinic.Areas.Admin.Controllers
 
 
 
-        // Kullanıcı düzenleme: GET
         [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
             Console.WriteLine("Edit GET action başlatıldı. id: " + id);
 
-            // Kullanıcıyı veritabanından bulma
             var user = await _userManager.FindByIdAsync(id);
             if (user == null)
             {
@@ -147,25 +140,21 @@ namespace rainclinic.Areas.Admin.Controllers
             }
             Console.WriteLine("User bulundu: " + user.Email);
 
-            // Kullanıcının rollerini alıyoruz
             var userRoles = await _userManager.GetRolesAsync(user);
             Console.WriteLine("User rolleri alındı: " + string.Join(", ", userRoles));
 
-            // Tüm rollerin listesini alıyoruz
             var allRoles = _roleManager.Roles.Select(r => r.Name).ToList();
             Console.WriteLine("Tüm roller alındı: " + string.Join(", ", allRoles));
 
-            // EditUserViewModel oluşturuluyor
             var model = new EditUserViewModel
             {
                 Id = user.Id,
-                Email = user.Email, // Email alanı burada modele atanıyor
+                Email = user.Email, 
                 Roles = allRoles,
                 SelectedRoles = userRoles
             };
             Console.WriteLine("Model oluşturuldu. Email: " + model.Email);
 
-            // Önceki ModelState hatalarını temizliyoruz
             ModelState.Clear();
             Console.WriteLine("ModelState temizlendi.");
 
@@ -175,7 +164,6 @@ namespace rainclinic.Areas.Admin.Controllers
 
 
 
-        // Kullanıcı düzenleme: POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(EditUserViewModel model, string[] SelectedRoles)
@@ -193,23 +181,19 @@ namespace rainclinic.Areas.Admin.Controllers
                 return View(model);
             }
 
-            // Email alanının boş olup olmadığını kontrol edin
             if (string.IsNullOrEmpty(model.Email))
             {
                 ModelState.AddModelError("", "Email alanı boş olamaz.");
                 return View(model);
             }
 
-            // Kullanıcının email adresini güncelleme
             user.Email = model.Email;
-            user.UserName = model.Email; // Kullanıcı adını da güncellemeyi unutmayın
+            user.UserName = model.Email; 
 
-            // Mevcut rolleri kaldırın ve yeni rolleri ekleyin
             var userRoles = await _userManager.GetRolesAsync(user);
             await _userManager.RemoveFromRolesAsync(user, userRoles);
             await _userManager.AddToRolesAsync(user, SelectedRoles);
 
-            // Kullanıcıyı güncelleme
             var updateResult = await _userManager.UpdateAsync(user);
             if (!updateResult.Succeeded)
             {
@@ -224,7 +208,6 @@ namespace rainclinic.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        // Kullanıcı detayları: GET
         [HttpGet]
         public async Task<IActionResult> Details(string id)
         {
@@ -237,12 +220,11 @@ namespace rainclinic.Areas.Admin.Controllers
                 Id = user.Id,
                 Email = user.Email,
                 Roles = roles,
-                CreatedAt = DateTime.Now // Gerçek tarih eklenebilir
+                CreatedAt = DateTime.Now 
             };
             return View(model);
         }
 
-        // Kullanıcı silme onayı: GET (Opsiyonel, onay sayfası)
         [HttpGet]
         public async Task<IActionResult> Delete(string id)
         {
@@ -260,7 +242,6 @@ namespace rainclinic.Areas.Admin.Controllers
             return View(model);
         }
 
-        // Kullanıcı silme işlemi: POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)

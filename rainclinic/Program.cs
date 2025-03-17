@@ -16,17 +16,15 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Production loglama için Serilog
         builder.Host.UseSerilog((context, services, configuration) =>
             configuration.ReadFrom.Configuration(context.Configuration)
                          .ReadFrom.Services(services)
                          .Enrich.FromLogContext());
 
-        // SQL Server baðlantýsý
+  
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-        // Identity ve rol yönetimi (güvenlik için güçlü þifre kurallarý)
         builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
         {
             options.Password.RequireDigit = true;
@@ -40,7 +38,6 @@ public class Program
 
         builder.Services.AddTransient<IEmailSender, SmtpEmailSender>();
 
-        // Custom ClaimsPrincipalFactory, cookie içine rol claim'lerini eklemek için
         builder.Services.AddScoped<IUserClaimsPrincipalFactory<IdentityUser>, AdditionalUserClaimsPrincipalFactory>();
 
         builder.Services.AddMemoryCache();
@@ -48,7 +45,6 @@ public class Program
         builder.Services.AddResponseCaching();
         builder.Services.AddHealthChecks();
 
-        // Identity cookie ayarlarý (anti-forgery, secure cookie)
         builder.Services.ConfigureApplicationCookie(options =>
         {
             options.Cookie.HttpOnly = true;
@@ -58,7 +54,6 @@ public class Program
             options.LogoutPath = "/Account/Logout";
         });
 
-        // Authentication ayarlarý – MVC için Identity'nin default cookie (Identity.Application) kullanýlýyor.
         builder.Services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
@@ -79,7 +74,6 @@ public class Program
             };
         });
 
-        // Swagger (API dokümantasyonu için)
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(options =>
         {
@@ -112,7 +106,6 @@ public class Program
 
         var app = builder.Build();
 
-        // Production için gerekli middleware'ler
         if (!app.Environment.IsDevelopment())
         {
             app.UseExceptionHandler("/Home/Error");
@@ -126,7 +119,6 @@ public class Program
         app.UseAuthentication();
         app.UseAuthorization();
 
-        // Routing: Area (Admin) ve default
         app.MapControllerRoute(
             name: "areas",
             pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
@@ -135,7 +127,6 @@ public class Program
             pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
-        // Seeding: DbInitializer, admin ve roller oluþturuluyor
         using (var scope = app.Services.CreateScope())
         {
             var services = scope.ServiceProvider;

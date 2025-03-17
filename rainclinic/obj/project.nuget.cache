@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1Kng6x08H6M=",
+  "dgSpecHash": "VB5fzNkfdFc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\rainclinic.csproj",
+  "projectFilePath": "C:\\Users\\berat\\Desktop\\RAINCLINIC\\rainclinic\\rainclinic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\berat\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\berat\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

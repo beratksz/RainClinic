@@ -109,14 +109,12 @@
         var isValid = true;
         var errorMessage = "";
 
-        // Name validation
         var name = document.querySelector('input[name="Name"]').value;
         if (name.trim() === "") {
             isValid = false;
             errorMessage += "İsim alanı boş bırakılamaz.\n";
         }
 
-        // Email validation
         var email = document.querySelector('input[name="Email"]').value;
         var emailPattern = /^[^\s]+[^\s]+\.[^\s]+$/;
         if (!emailPattern.test(email)) {
@@ -124,7 +122,6 @@
             errorMessage += "Geçerli bir e-posta adresi giriniz.\n";
         }
 
-        // Phone validation
         var phone = document.querySelector('input[name="Phone"]').value;
         var phonePattern = /^[0-9]{10}$/;
         if (!phonePattern.test(phone)) {
@@ -132,21 +129,18 @@
             errorMessage += "Geçerli bir telefon numarası giriniz. (Başında *0* olmadan)\n";
         }
 
-        // Doctor validation
         var doctor = document.querySelector('select[name="Doctor"]').value;
         if (doctor === "") {
             isValid = false;
             errorMessage += "Bir doktor seçiniz.\n";
         }
 
-        // Muayene Tipi validation
         var muayeneTipi = document.querySelector('input[name="MuayeneTipi"]:checked');
         if (!muayeneTipi) {
             isValid = false;
             errorMessage += "Muayene tipi seçiniz.\n";
         }
 
-        // Password validation
         var password = document.querySelector('input[name="Password"]').value;
         if (password.trim() === "") {
             isValid = false;
@@ -160,7 +154,7 @@
         } else {
             document.getElementById('successMessage').style.display = 'block';
             setTimeout(function() {
-                window.location.href = '/Account/Login'; // Yönlendirme yapılacak URL
+                window.location.href = '/Account/Login'; 
             }, 5000);
         }
     }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using rainclinic.Models;  // LoginViewModel sınıfının bulunduğu yer
+using rainclinic.Models; 
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 
@@ -18,7 +18,6 @@ namespace rainclinic.Controllers
             _userManager = userManager;
         }
 
-        // GET: /Account/Login
         [HttpGet]
         public IActionResult Login(string returnUrl = null)
         {
@@ -26,7 +25,6 @@ namespace rainclinic.Controllers
             return View();
         }
 
-        // POST: /Account/Login
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)

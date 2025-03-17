@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\rainclinic.csproj": {}
+    "C:\\Users\\berat\\Desktop\\RAINCLINIC\\rainclinic\\rainclinic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\rainclinic.csproj": {
+    "C:\\Users\\berat\\Desktop\\RAINCLINIC\\rainclinic\\rainclinic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\rainclinic.csproj",
+        "projectUniqueName": "C:\\Users\\berat\\Desktop\\RAINCLINIC\\rainclinic\\rainclinic.csproj",
         "projectName": "rainclinic",
-        "projectPath": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\rainclinic.csproj",
+        "projectPath": "C:\\Users\\berat\\Desktop\\RAINCLINIC\\rainclinic\\rainclinic.csproj",
         "packagesPath": "C:\\Users\\berat\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\berat\\Desktop\\rainclinic\\rainclinic\\obj\\",
         "projectStyle": "PackageReference",

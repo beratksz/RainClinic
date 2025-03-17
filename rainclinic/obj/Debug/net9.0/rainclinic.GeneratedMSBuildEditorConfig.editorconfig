@@ -17,125 +17,125 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = rainclinic
 build_property.RootNamespace = rainclinic
-build_property.ProjectDir = C:\Users\berat\Desktop\rainclinic\rainclinic\
+build_property.ProjectDir = C:\Users\berat\Desktop\RAINCLINIC\rainclinic\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\berat\Desktop\rainclinic\rainclinic
+build_property.MSBuildProjectDirectory = C:\Users\berat\Desktop\RAINCLINIC\rainclinic
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Areas/Admin/Views/AppointmentManagement/Details.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Areas/Admin/Views/AppointmentManagement/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXBwb2ludG1lbnRNYW5hZ2VtZW50XERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Areas/Admin/Views/AppointmentManagement/Edit.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Areas/Admin/Views/AppointmentManagement/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXBwb2ludG1lbnRNYW5hZ2VtZW50XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Areas/Admin/Views/AppointmentManagement/Index.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Areas/Admin/Views/AppointmentManagement/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXBwb2ludG1lbnRNYW5hZ2VtZW50XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Areas/Admin/Views/Home/Index.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Areas/Admin/Views/UserManagement/Create.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Areas/Admin/Views/UserManagement/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlck1hbmFnZW1lbnRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Areas/Admin/Views/UserManagement/Details.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Areas/Admin/Views/UserManagement/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlck1hbmFnZW1lbnRcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Areas/Admin/Views/UserManagement/Edit.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Areas/Admin/Views/UserManagement/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlck1hbmFnZW1lbnRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Areas/Admin/Views/UserManagement/Index.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Areas/Admin/Views/UserManagement/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlck1hbmFnZW1lbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Account/ConfirmEmail.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Account/Error.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Account/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Account/Login.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Appointment/Create.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Appointment/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Appointment/Track.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Appointment/Track.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcVHJhY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Home/aile_ter.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Home/aile_ter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxhaWxlX3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Home/bireysel_ter.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Home/bireysel_ter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxiaXJleXNlbF90ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Home/cift_ter.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Home/cift_ter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjaWZ0X3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Home/ekibimiz.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Home/ekibimiz.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxla2liaW1pei5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Home/Index.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Home/kurumsal_ter.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Home/kurumsal_ter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxrdXJ1bXNhbF90ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Home/Privacy.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Shared/Error.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/_ViewImports.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/_ViewStart.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/berat/Desktop/rainclinic/rainclinic/Views/Shared/_Layout.cshtml]
+[C:/Users/berat/Desktop/RAINCLINIC/rainclinic/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-kz1w2fue7w

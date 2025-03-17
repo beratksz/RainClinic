@@ -6,7 +6,7 @@ namespace rainclinic.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize] // Bu attribute sayesinde, geçerli bir JWT token gerektirecek
+    [Authorize] 
     public class ExampleController : ControllerBase
     {
         [HttpGet]

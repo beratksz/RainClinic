@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("rainclinic.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9aa5b483ba14617b2c9c6ecd89be00b3e31ba73")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+358ac5e5989ac6a221873a4d9f2ea72e2e64b28b")]
 [assembly: System.Reflection.AssemblyProductAttribute("rainclinic.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("rainclinic.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

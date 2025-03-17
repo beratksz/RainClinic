@@ -21,21 +21,18 @@ namespace rainclinic.Tests
         [Fact]
         public async Task ProtectedEndpoint_Unauthorized_WithoutToken()
         {
-            // Arrange & Act: Token olmadan korumalı endpoint'e istek gönderiyoruz.
             var response = await _client.GetAsync("/api/example");
 
-            // Assert: 401 Unauthorized bekliyoruz.
             Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
         }
 
         [Fact]
         public async Task ProtectedEndpoint_Authorized_WithToken()
         {
-            // Arrange: Önce token almak için /api/token endpoint'ine istek gönderelim.
             var loginData = new
             {
-                Email = "admin@example.com",
-                Password = "Admin123!",
+                Email = "admin@rainclinic.blog",
+                Password = "Rainclinic123!",
                 RememberMe = false
             };
 
@@ -46,13 +43,12 @@ namespace rainclinic.Tests
             var tokenResult = JsonConvert.DeserializeObject<TokenResult>(await tokenResponse.Content.ReadAsStringAsync());
             var token = tokenResult.Token;
 
-            // Artık korumalı endpoint'e yetkili istek gönderiyoruz.
             _client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-            // Act
+            
             var response = await _client.GetAsync("/api/example");
 
-            // Assert
+            
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
     }
